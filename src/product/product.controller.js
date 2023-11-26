@@ -26,8 +26,8 @@ exports.getProductList = async (req, res, next) => {
 		if(req.query.limit) {
 			limit = req.query.limit;
 		}
-		const data = await productService.getProductList(req.body, req.query.offset, req.query.limit)
-		return res.status(201).json({
+		const data = await productService.getProductList(req.query, req.query.offset, req.query.limit)
+		return res.status(200).json({
 			data
 		})
 	}
@@ -38,9 +38,9 @@ exports.getProductList = async (req, res, next) => {
 
 exports.getProduct = async (req, res, next) => {
 	try {
-		await productService.getProduct(req.body)
-		return res.status(201).json({
-			massage: "One product find sucessfully",
+		const product = await productService.getProduct(req.body)
+		return res.status(200).json({
+			data: product,
 			success: true
 		})
 	}
