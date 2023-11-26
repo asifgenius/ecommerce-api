@@ -45,3 +45,9 @@ GET /api/v1/purchases?offset=2&limit=2
 | 400 | BAD REQUEST |
 | 404 | NOT FOUND |
 | 500 | INTERNAL SERVER ERROR |
+
+
+## Generator Sceret Key
+```
+openssl rand -hex 32
+```
