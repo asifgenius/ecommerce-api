@@ -39,7 +39,7 @@ exports.getsubCategory = async (req, res, next) => {
 	try {
 		await subCategoryService.getsubCategory(req.body)
 		return res.status(201).json({
-			massage: "One subCategory item find sucessfully",
+			massage: "subCategory item find sucessfully",
 			success: true
 		})
 	}
