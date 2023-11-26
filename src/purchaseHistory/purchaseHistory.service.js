@@ -6,8 +6,8 @@ exports.addPurchaseHistory = async (data) => {
 	return await PurchaseHistory.create(data);
 }
 
-exports.getPurchaseHistoryList = async (data, skip, limit) => {
-	return await PurchaseHistory.find(data).skip(skip).limit(limit).sort('_id').lean();
+exports.getPurchaseHistoryList = async (skip, limit) => {
+	return await PurchaseHistory.find().skip(skip).limit(limit).sort('_id').lean();
 }
 
 exports.getPurchaseHistory = async (data) => {
