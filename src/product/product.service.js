@@ -6,8 +6,8 @@ exports.addProduct = async (data) => {
 	return await Product.create(data);
 }
 
-exports.getProductList = async (data, skip, limit) => {
-	return await Product.find(data),skip(skip).limit(limit).sort('_id').lean();
+exports.getProductList = async (skip, limit) => {
+	return await Product.find().skip(skip).limit(limit).sort('_id').lean();
 }
 
 exports.getProduct = async (data) => {
