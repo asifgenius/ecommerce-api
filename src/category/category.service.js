@@ -6,8 +6,8 @@ exports.addCategory = async (data) => {
 	return await Category.create(data);
 }
 
-exports.getCategoryList = async (data, skip, limit) => {
-	return await Category.find(data).skip(skip).limit(limit).sort('_id').lean();
+exports.getCategoryList = async (skip, limit) => {
+	return await Category.find().skip(skip).limit(limit).sort('_id').lean();
 
 }
 
