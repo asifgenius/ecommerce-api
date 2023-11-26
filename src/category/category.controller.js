@@ -39,7 +39,7 @@ exports.getCategory = async (req, res, next) => {
 	try {
 		await categoryService.getCategory(req.body)
 		return res.status(200).json({
-			massage: "One category item find sucessfully",
+			massage: "Category item find sucessfully",
 			success: true
 		})
 	}
